@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Carta Oscura de Amor</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #2b2b2b, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  color: #eaeaea;
+  overflow: hidden;
+}
+
+.envelope {
+  width: 320px;
+  height: 220px;
+  background: #111;
+  border: 2px solid #444;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 30px black;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, #000 50%);
+}
+
+.open-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 90px;
+  font-family: 'Creepster', cursive;
+  font-size: 1.4em;
+}
+
+.letter {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  padding: 40px 20px;
+  overflow-y: auto;
+  display: none;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  font-size: 2.4em;
+  margin-bottom: 30px;
+}
+
+p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 1.2em;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.secret {
+  margin-top: 40px;
+  font-size: 1.15em;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeSecret 3s ease forwards;
+  animation-delay: 2s;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  width: 220px;
+  background: #111;
+  border: 2px solid #333;
+  padding: 12px;
+  box-shadow: 0 0 20px #000;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.card:nth-child(2) { animation-delay: 1.2s; }
+.card:nth-child(3) { animation-delay: 2.4s; }
+
+.card img {
+  width: 100%;
+  filter: grayscale(40%);
+}
+
+.card p {
+  font-size: 0.95em;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+.button-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+button {
+  background: #111;
+  border: 2px solid #555;
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 1.1em;
+  font-family: 'Creepster', cursive;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+button:hover {
+  background: #1b1b1b;
+  transform: scale(1.1);
+}
+
+#response {
+  margin-top: 25px;
+  font-size: 1.25em;
+  font-style: italic;
+  display: none;
+}
+
+/* Corazones */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: #111;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-110vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeSecret {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="https://raw.githubusercontent.com/puki7x-art/Eterno-amor/refs/heads/main/PEPU%20-%20FAR%20AWAY%20(Video%20Oficial)%5BProd.%20Nico%20Valdi%20%26%20Pizzu%5D.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" onclick="openLetter()">
+  <div class="open-text">Abrime 🕯️</div>
+</div>
+
+<div class="letter" id="letter">
+  <h1>Belén… ¿querés ser mi San Valentín?</h1>
+
+  <p>
+    Mi amor Belén,  
+    te amo en los momentos grandes y en los más chiquitos.
+    <br><br>
+    Te amo cuando te cuidé con un pañito,  
+    porque protegerte fue mi forma más sincera de amarte.
+    <br><br>
+    Te amo cuando fuimos a jugar al tejo,  
+    riéndonos como dos almas raras que se encontraron.
+    <br><br>
+    Te amo cuando querías comida al plato,  
+    porque hasta lo simple con vos se volvió hogar.
+    <br><br>
+    Quiero ser siempre tu bebé tiquitito,  
+    el que te cuida, te acompaña y te ama incluso en la oscuridad.
+    <br><br>
+    <strong>¿Querés ser mi San Valentín para siempre?</strong>
+  </p>
+
+  <div class="gallery">
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/puki7x-art/Eterno-amor/refs/heads/main/24dff74a-2041-4463-a3fb-ad47abbdf710.jpeg">
+      <p>“Cuidarte fue la forma más pura de decirte te amo.”</p>
+    </div>
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/puki7x-art/Eterno-amor/refs/heads/main/8DBA6417-D6D4-46A9-8044-9C0E070467D7.jpeg">
+      <p>“Con vos, hasta un juego se vuelve recuerdo eterno.”</p>
+    </div>
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/puki7x-art/Eterno-amor/refs/heads/main/c1954aa0-e7ca-437d-b808-bd506eb90383.jpeg">
+      <p>“Amarte también es compartir un plato y una vida.”</p>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="sayYes()">Sí, para siempre 🖤</button>
+    <div id="response">
+      Entonces prometo cuidarte en cada vida,  
+      amarte en cada detalle y elegirte siempre.
+      <div class="signature">— Augusto 🕯️🦇</div>
+      <div class="secret">Te amo con mi alma, quiero estar siempre juntitos.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLetter() {
+  document.querySelector(".envelope").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+  const music = document.getElementById("music");
+  music.volume = 0.2; // volumen suave
+  music.play();
+}
+
+function sayYes() {
+  document.getElementById("response").style.display = "block";
+  for (let i = 0; i < 25; i++) createHeart();
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "🖤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+</script>
+
+</body>
+</html>
